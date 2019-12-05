@@ -1,7 +1,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 
-from .models import Message, Date
+from .models import Message, Date, WeekDay
 
 import datetime
 
@@ -25,9 +25,34 @@ class check_api(TestCase):
 
 class send_daily_messages(TestCase):
     """ Test Module for Daily Messages Messenger """   
+
+    def test_recover_messages_by_day(self):
+        date_for_test = Date.objects.create(date=datetime.date.today())
+        day_for_test = WeekDay.objects.create(day=datetime.date.today().weekday())
+        self.message1 = Message.objects.create(name='test_for_test')        
+        self.message2 = Message.objects.create(name='test_for_test_2')  
+        self.message3 = Message.objects.create(name='test_for_test_3')  
+        self.message1.date.add(date_for_test)
+        self.message1.week_day.add(day_for_test)
+        self.message2.week_day.add(day_for_test)
+        self.messages = Message.recover_messages()
+        self.assertEqual(len(self.messages), 2)
+    
+    def test_edit_messages(self):
+        date_for_test = Date.objects.create(date=datetime.date.today())
+        day_for_test = WeekDay.objects.create(day=datetime.date.today().weekday())
+        self.message1 = Message.objects.create(name='test_1')        
+        self.message2 = Message.objects.create(name='test_2')  
+        self.message3 = Message.objects.create(name='test_3')  
+        self.message1.date.add(date_for_test)
+        self.message1.week_day.add(day_for_test)
+        self.message2.week_day.add(day_for_test)
+        self.messages = Message.objects.all()
+        for msg in list(self.messages):
+            msg.edit_message(msg)
+
     def test_daily_messages(self):
         self.client = APIClient()
         self.response = self.client.get(reverse('send-daily-messages'))
         self.assertEqual(self.response.status_code, status.HTTP_200_OK)
 
-# Functions test

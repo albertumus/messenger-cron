@@ -25,11 +25,11 @@ def setup_periodic_tasks(sender, **kwargs):
 
 @app.task()
 def sendDailyMessages():
-    r = requests.get('http://localhost:7000/api/check-api')
+    r = requests.get('http://localhost:7000/api/send-daily-messages/')
 
 @app.task()
 def check_api():
-    r = requests.get('http://localhost:7000/api/check-api')
+    r = requests.get('http://localhost:7000/api/check-api/')
 
 
 @app.task(bind=True)
