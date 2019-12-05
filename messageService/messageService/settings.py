@@ -165,3 +165,16 @@ CELERY_TIMEZONE = 'Europe/Madrid'
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# URLs
+SERVICE_URL = 'http://localhost:7000'
+URL_KAPSCH_TOKEN = ''
+URL_KAPSCH = ''
+
+# Email Config
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = '' 
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

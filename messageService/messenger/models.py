@@ -1,16 +1,16 @@
 from django.db import models
 
+import datetime 
 from xml.dom.minidom import parse, getDOMImplementation
 from time import gmtime, strftime
 
-import os 
-import datetime 
+from rest_framework import status
+import requests
 
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-import os.path
-messageDir = os.path.dirname(os.path.abspath('./message_list'))
-
-
+from messageService.settings import URL_KAPSCH_TOKEN, URL_KAPSCH
 
 class Date(models.Model):
     date = models.DateField(unique=True, blank=False, null=False, verbose_name="Dia programado")
@@ -34,15 +34,18 @@ class Message(models.Model):
         return self.name
 
     @classmethod
-    def recover_messages(cls):        
-        return (Message.objects.filter(date__date__gte=datetime.date.today()) | Message.objects.filter(week_day__day=datetime.date.today().weekday())).distinct()
+    def recover_message(cls):     
+        return (Message.objects.filter(date__date=datetime.date.today()) | Message.objects.filter(week_day__day=datetime.date.today().weekday())).distinct()
 
     @classmethod
     def edit_message(cls, name):
+        """ String -> None
+        OBJ: Edit a message at sets the correct datetime to
+        PRE: 
+        """
         xml_to_edit = parse('messenger/message_list/{}.xml'.format(name))
 
-        updateTime = xml_to_edit.getElementsByTagName('publicationTime')
-        updateTime[0].firstChild.data = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
+        xml_to_edit.getElementsByTagName('publicationTime')[0].firstChild.data = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
 
         start_time = xml_to_edit.getElementsByTagName('overallStartTime')
         data_start_time = start_time[0].firstChild.data.split('T')
@@ -63,3 +66,20 @@ class Message(models.Model):
         with open('messenger/message_list/{}.xml'.format(name),'w', encoding='utf-8') as f:
             xml_to_edit.writexml(f, addindent='', newl='', encoding='utf-8') 
 
+    @classmethod
+    def send_message(cls, name):
+        """ String -> HTTP_Response
+        OBJ: Extract the XML Information from the XML File and send it to the API
+        PRE: 
+        """
+        try:
+            xmlDataToSend = "{}".format(parse('messenger/message_list/{}.xml'.format(name)).toxml())
+
+            token_key = requests.get(URL_KAPSCH_TOKEN, verify=False).text
+
+            send = requests.post(URL_KAPSCH + '{}'.format(token_key),data=xmlDataToSend, verify=False)
+            return send.status_code 
+
+        except: 
+            return status.HTTP_400_BAD_REQUEST
+        

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?><d2LogicalModel modelBaseVersion="2" xmlns="http://datex2.eu/schema/2/2_0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datex2.eu/schema/2/2_0 http://www.datex2.eu/schema/2/2_2/DATEXIISchema_2_2_2.xsd">
+    <exchange>
+        <clientIdentification>0001</clientIdentification>
+        <supplierIdentification>
+            <country>es</country>
+            <nationalIdentifier>es</nationalIdentifier>
+        </supplierIdentification>
+    </exchange>
+    <payloadPublication lang="en" xsi:type="SituationPublication">
+        <publicationTime>2019-12-05T15:27:40</publicationTime>
+        <publicationCreator>
+            <country>es</country>
+            <nationalIdentifier>es</nationalIdentifier>
+        </publicationCreator>
+        <situation id="4" version="1">
+            <headerInformation>
+                <confidentiality>noRestriction</confidentiality>
+                <informationStatus>real</informationStatus>
+            </headerInformation>
+            <situationRecord id="4-1" version="1" xsi:type="AbnormalTraffic">
+                <situationRecordCreationTime>2019-10-28T10:43:30</situationRecordCreationTime>
+                <situationRecordVersionTime>2019-10-28T10:43:30</situationRecordVersionTime>
+                <probabilityOfOccurrence>certain</probabilityOfOccurrence>
+                <validity>
+                    <validityStatus>active</validityStatus>
+                    <validityTimeSpecification>
+                        <overallStartTime>2019-12-05T08:00:00</overallStartTime>
+                        <overallEndTime>2019-12-05T21:00:00</overallEndTime>
+                    </validityTimeSpecification>
+                </validity>
+                <groupOfLocations xsi:type="ItineraryByIndexedLocations">
+                    <locationContainedInItinerary index="0">
+                        <location xsi:type="Point">
+                            <pointByCoordinates>
+                                <pointCoordinates>
+                                    <latitude>36.516435</latitude>
+                                    <longitude>-4.90392600</longitude>
+                                </pointCoordinates>
+                            </pointByCoordinates>
+                        </location>
+                    </locationContainedInItinerary>
+                    <locationContainedInItinerary index="1">
+                        <location xsi:type="Linear">
+                            <linearExtension>
+                                <extendedLinear>
+                                    <linearByCoordinates>
+                                        <start>
+                                            <latitude>36.516022</latitude>
+                                            <longitude>-4.90816000</longitude>
+                                        </start>
+                                        <intermediate index="1">
+                                            <pointCoordinates>
+                                                <latitude>36.51628</latitude>
+                                                <longitude>-4.90715600</longitude>
+                                            </pointCoordinates>
+                                        </intermediate>
+                                        <intermediate index="2">
+                                            <pointCoordinates>
+                                                <latitude>36.516412</latitude>
+                                                <longitude>-4.90604200</longitude>
+                                            </pointCoordinates>
+                                        </intermediate>
+                                        <end>
+                                            <latitude>36.516423</latitude>
+                                            <longitude>-4.90494800</longitude>
+                                        </end>
+                                    </linearByCoordinates>
+                                </extendedLinear>
+                            </linearExtension>
+                        </location>
+                    </locationContainedInItinerary>
+                </groupOfLocations>
+            </situationRecord>
+        </situation>
+    </payloadPublication>
+</d2LogicalModel>

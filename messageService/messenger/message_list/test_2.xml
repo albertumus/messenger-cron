@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?><d2LogicalModel modelBaseVersion="2" xmlns="http://datex2.eu/schema/2/2_0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datex2.eu/schema/2/2_0 http://www.datex2.eu/schema/2/2_2/DATEXIISchema_2_2_2.xsd">    
+        <exchange>        
+                <clientIdentification>0001</clientIdentification>        
+                <supplierIdentification>            
+                        <country>es</country>            
+                        <nationalIdentifier>es</nationalIdentifier>            
+                </supplierIdentification>        
+        </exchange>    
+        <payloadPublication lang="en" xsi:type="SituationPublication">        
+                <publicationTime>2019-12-05T18:48:31</publicationTime>        
+                <publicationCreator>            
+                        <country>es</country>            
+                        <nationalIdentifier>es</nationalIdentifier>            
+                </publicationCreator>        
+                <situation id="1" version="1">            
+                        <headerInformation>                
+                                <confidentiality>noRestriction</confidentiality>                
+                                <informationStatus>real</informationStatus>                
+                        </headerInformation>            
+                        <situationRecord id="1-1" version="1" xsi:type="MaintenanceWorks">                
+                                <situationRecordCreationTime>2019-10-28T10:31:47</situationRecordCreationTime>                
+                                <situationRecordVersionTime>2019-10-28T10:31:47</situationRecordVersionTime>                
+                                <probabilityOfOccurrence>certain</probabilityOfOccurrence>                
+                                <validity>                    
+                                        <validityStatus>active</validityStatus>                    
+                                        <validityTimeSpecification>                        
+                                                <overallStartTime>2019-12-05T11:00:00</overallStartTime>                        
+                                                <overallEndTime>2019-12-05T21:00:00</overallEndTime>                        
+                                        </validityTimeSpecification>                    
+                                </validity>                
+                                <impact>                    
+                                        <numberOfLanesRestricted>1</numberOfLanesRestricted>                    
+                                        <numberOfOperationalLanes>1</numberOfOperationalLanes>                    
+                                        <originalNumberOfLanes>2</originalNumberOfLanes>                    
+                                </impact>                
+                                <groupOfLocations xsi:type="ItineraryByIndexedLocations">                    
+                                        <locationContainedInItinerary index="0">                        
+                                                <location xsi:type="Point">                            
+                                                        <pointByCoordinates>                                
+                                                                <pointCoordinates>                                    
+                                                                        <latitude>36.512843</latitude>                                    
+                                                                        <longitude>-4.92710200</longitude>                                    
+                                                                </pointCoordinates>                                
+                                                        </pointByCoordinates>                            
+                                                </location>                        
+                                        </locationContainedInItinerary>                    
+                                        <locationContainedInItinerary index="1">                        
+                                                <location xsi:type="Linear">                            
+                                                        <linearExtension>                                
+                                                                <extendedLinear>                                    
+                                                                        <linearByCoordinates>                                        
+                                                                                <start>                                            
+                                                                                        <latitude>36.513158</latitude>                                            
+                                                                                        <longitude>-4.93090500</longitude>                                            
+                                                                                </start>                                        
+                                                                                <intermediate index="1">                                            
+                                                                                        <pointCoordinates>                                                
+                                                                                                <latitude>36.512938</latitude>                                                
+                                                                                                <longitude>-4.92999600</longitude>                                                
+                                                                                        </pointCoordinates>                                            
+                                                                                </intermediate>                                        
+                                                                                <intermediate index="2">                                            
+                                                                                        <pointCoordinates>                                                
+                                                                                                <latitude>36.51281</latitude>                                                
+                                                                                                <longitude>-4.92892400</longitude>                                                
+                                                                                        </pointCoordinates>                                            
+                                                                                </intermediate>                                        
+                                                                                <end>                                            
+                                                                                        <latitude>36.51279</latitude>                                            
+                                                                                        <longitude>-4.92794700</longitude>                                            
+                                                                                </end>                                        
+                                                                        </linearByCoordinates>                                    
+                                                                </extendedLinear>                                
+                                                        </linearExtension>                            
+                                                </location>                        
+                                        </locationContainedInItinerary>                    
+                                        <locationContainedInItinerary index="2">                        
+                                                <location xsi:type="Linear">                            
+                                                        <supplementaryPositionalDescription>                                
+                                                                <affectedCarriagewayAndLanes>                                    
+                                                                        <carriageway>mainCarriageway</carriageway>                                    
+                                                                        <lane>lane1</lane>                                    
+                                                                </affectedCarriagewayAndLanes>                                
+                                                        </supplementaryPositionalDescription>                            
+                                                        <linearExtension>                                
+                                                                <extendedLinear>                                    
+                                                                        <linearByCoordinates>                                        
+                                                                                <start>                                            
+                                                                                        <latitude>36.512885</latitude>                                            
+                                                                                        <longitude>-4.92622000</longitude>                                            
+                                                                                </start>                                        
+                                                                                <end>                                            
+                                                                                        <latitude>36.512925</latitude>                                            
+                                                                                        <longitude>-4.92543400</longitude>                                            
+                                                                                </end>                                        
+                                                                        </linearByCoordinates>                                    
+                                                                </extendedLinear>                                
+                                                        </linearExtension>                            
+                                                </location>                        
+                                        </locationContainedInItinerary>                    
+                                </groupOfLocations>                
+                                <roadMaintenanceType>repairWork</roadMaintenanceType>                
+                        </situationRecord>            
+                        <situationRecord id="1-2" version="1" xsi:type="SpeedManagement">                
+                                <situationRecordCreationTime>2019-10-28T10:31:47</situationRecordCreationTime>                
+                                <situationRecordVersionTime>2019-10-28T10:31:47</situationRecordVersionTime>                
+                                <probabilityOfOccurrence>certain</probabilityOfOccurrence>                
+                                <validity>                    
+                                        <validityStatus>active</validityStatus>                    
+                                        <validityTimeSpecification>                        
+                                                <overallStartTime>2019-12-05T11:00:00</overallStartTime>                        
+                                                <overallEndTime>2019-12-05T21:00:00</overallEndTime>                        
+                                        </validityTimeSpecification>                    
+                                </validity>                
+                                <groupOfLocations xsi:type="Linear">                    
+                                        <linearExtension>                        
+                                                <extendedLinear>                            
+                                                        <linearByCoordinates>                                
+                                                                <start>                                    
+                                                                        <latitude>36.513158</latitude>                                    
+                                                                        <longitude>-4.93090500</longitude>                                    
+                                                                </start>                                
+                                                                <end>                                    
+                                                                        <latitude>36.512925</latitude>                                    
+                                                                        <longitude>-4.92543400</longitude>                                    
+                                                                </end>                                
+                                                        </linearByCoordinates>                            
+                                                </extendedLinear>                        
+                                        </linearExtension>                    
+                                </groupOfLocations>                
+                                <complianceOption>mandatory</complianceOption>                
+                                <speedManagementType>observeSpeedLimit</speedManagementType>                
+                                <temporarySpeedLimit>50</temporarySpeedLimit>                
+                        </situationRecord>            
+                </situation>        
+        </payloadPublication>    
+</d2LogicalModel>
