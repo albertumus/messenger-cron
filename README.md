@@ -1,7 +1,7 @@
 # Messenger Cron
 Django app to automatize sending messages to an Gateway
 
-## 1. 
+## 1. System Map
 ![System Map](img/MapSystem.PNG)
 
 ## 2. WorkFlow
