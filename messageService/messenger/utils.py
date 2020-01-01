@@ -7,5 +7,3 @@ def send_results(results):
     email_from = ''
     recipient_list = ['']
     send_mail( subject, message, email_from, recipient_list )
-
-    #amendez@ci3.es
